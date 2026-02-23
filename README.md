@@ -36,8 +36,8 @@ This reads the xml file, parses its contents, renders the Vulkan bindings, and f
 ### Generation with the package manager from build.zig
 
 There is also support for adding this project as a dependency through zig package manager in its current form. In order to do this, add this repo as a dependency:
-```sh
-zig fetch --save git+https://github.com/Snektron/vulkan-zig
+```
+$ zig fetch --save git+https://github.com/Snektron/vulkan-zig
 ```
 And then in your build.zig file, you'll need to add a line like this to your build function:
 ```zig
@@ -51,8 +51,8 @@ That will allow you to `@import("vulkan")` in your executable's source.
 #### Generating bindings directly from Vulkan-Headers
 
 Bindings can be generated directly from the Vulkan-Headers repository by adding Vulkan-Headers as a dependency, and then passing the path to `vk.xml` from that dependency:
-```sh
-zig fetch --save=vulkan_headers git+https://github.com/KhronosGroup/Vulkan-Headers
+```
+$ zig fetch --save=vulkan_headers git+https://github.com/KhronosGroup/Vulkan-Headers
 ```
 ```zig
 const vulkan = b.dependency("vulkan_zig", .{
